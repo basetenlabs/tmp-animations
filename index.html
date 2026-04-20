@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Baseten Animations</title>
+  <meta name="description" content="Temporary GitHub Pages site for Baseten animation prototypes." />
+  <style>
+    :root {
+      --green:#19E76E;
+      --pink:#FFA9FD;
+      --darkgreen:#00B86B;
+      --darksage:#A2AE9D;
+      --sage:#CDDCC7;
+      --lightsage:#F1F7EF;
+      --bg:#08110C;
+      --panel:#0E1913;
+      --panel2:#132019;
+      --text:#F6FFF8;
+      --muted:#D6E3D5;
+      --line:#294136;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: linear-gradient(180deg, var(--bg), #0B1510);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 40px 24px 56px;
+    }
+    .hero {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+    .sub {
+      color: var(--muted);
+      max-width: 820px;
+      margin-top: 10px;
+      font-size: 1rem;
+      line-height: 1.55;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      border-radius: 999px;
+      padding: 10px 14px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--green);
+      box-shadow: 0 0 16px rgba(25,231,110,0.5);
+    }
+    .card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.18);
+    }
+    .frame-header {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,0.02);
+    }
+    .window-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--pink); opacity: 0.9; }
+    .window-dot:nth-child(2) { background: #EAB57F; }
+    .window-dot:nth-child(3) { background: var(--green); }
+    iframe {
+      width: 100%;
+      height: min(82vh, 900px);
+      border: 0;
+      display: block;
+      background: #0B1510;
+    }
+    .grid {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .panel {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+    }
+    .panel h2 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+    }
+    .panel p, .panel li {
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 0.95rem;
+    }
+    code {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--line);
+      padding: 2px 6px;
+      border-radius: 8px;
+      font-size: 0.92em;
+    }
+    a { color: var(--green); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <h1>Baseten animation prototypes</h1>
+        <div class="sub">
+          A minimal GitHub Pages wrapper for animated HTML artifacts. Drop your final
+          <code>caching-diagram.html</code> into the repo root and GitHub Pages will serve it
+          as a normal webpage that Notion can link to or attempt to embed.
+        </div>
+      </div>
+      <div class="badge"><span class="dot"></span> GitHub Pages ready</div>
+    </div>
+
+    <div class="card">
+      <div class="frame-header">
+        <span class="window-dot"></span>
+        <span class="window-dot"></span>
+        <span class="window-dot"></span>
+        <span style="margin-left:8px;color:var(--muted);font-size:0.95rem;">/caching-diagram.html</span>
+      </div>
+      <iframe src="./caching-diagram.html" title="Caching diagram animation"></iframe>
+    </div>
+
+    <div class="grid">
+      <section class="panel">
+        <h2>How to use</h2>
+        <ol>
+          <li>Replace <code>caching-diagram.html</code> with your final animated HTML.</li>
+          <li>Push this repo to <code>basetenlabs/temp-animations</code>.</li>
+          <li>Enable GitHub Pages from the default branch root.</li>
+        </ol>
+      </section>
+      <section class="panel">
+        <h2>Resulting URLs</h2>
+        <p>
+          Homepage: <code>https://basetenlabs.github.io/temp-animations/</code><br />
+          Direct artifact: <code>https://basetenlabs.github.io/temp-animations/caching-diagram.html</code>
+        </p>
+      </section>
+      <section class="panel">
+        <h2>Notion tip</h2>
+        <p>
+          In Notion, the direct page URL usually behaves better than a GitHub Releases asset URL because it is served
+          as a normal webpage instead of a downloadable release file.
+        </p>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
